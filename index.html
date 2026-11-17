@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RISS TOP UP & JASA DIGITAL</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#06150e;color:white}
+header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#003d23,#00a65a)}
+header h1{font-size:27px;text-shadow:0 0 15px #00ff80}
+header p{margin-top:10px;color:#d2ffe5}
+.container{max-width:900px;margin:auto;padding:15px}
+.banner{padding:25px;background:linear-gradient(135deg,#07552e,#00a85a);border-radius:15px;margin:15px 0;line-height:1.7}
+h2.title{color:#00e676;margin:28px 0 15px;border-left:4px solid #00e676;padding-left:10px}
+.card{background:#10291d;border:1px solid #17663e;border-radius:13px;padding:18px;margin-bottom:13px}
+.card h3{color:#00e676;margin-bottom:10px}
+.card p{font-size:14px;line-height:1.8;color:#d4e9dc}
+.btn{display:inline-block;background:#00e676;color:#002b16;text-decoration:none;font-weight:bold;padding:12px 18px;border-radius:8px;margin-top:12px;border:0;cursor:pointer}
+.btn:hover{background:#8affbd}
+.search{width:100%;padding:14px;border-radius:9px;border:1px solid #00e676;background:#10291d;color:white;margin-bottom:15px}
+.price{display:flex;justify-content:space-between;align-items:center;gap:7px;background:#10291d;border:1px solid #175b3c;padding:12px;border-radius:9px;margin-bottom:8px;font-size:13px}
+.price strong{color:#00e676}
+.price button{background:#00e676;border:0;padding:8px 12px;border-radius:6px;font-weight:bold;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.notice{padding:15px;background:#173927;border-radius:10px;line-height:1.8;color:#d5f5e1;font-size:13px;margin:12px 0}
+footer{text-align:center;background:#020b06;padding:30px 10px;color:#a8cdb6;line-height:2;margin-top:35px}
+.floating{position:fixed;bottom:18px;right:15px;background:#00e676;color:#00351c;padding:14px 18px;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:0 0 15px #00e676;cursor:pointer}
+.provider{margin-bottom:15px}
+.provider h3{color:#00e676;margin:15px 0}
+.price small{color:#b8d7c4}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>👑 RISS TOP UP</h1>
+<p>TOP UP & JASA DIGITAL</p>
+<p>⚡ CEPAT • AMAN • TERPERCAYA</p>
+</header>
+
+<div class="container">
+
+<div class="banner">
+<h2>WELCOME TO RISS STORE 👑</h2>
+<p>Selamat datang di toko digital kami!</p>
+<p>Tempat top up, pulsa, jasa digital dan berbagai layanan lainnya.</p>
+<a class="btn" href="#produk">LIHAT PRODUK</a>
+</div>
+
+<h2 class="title">🎬 VIDEO ANIMASI AI</h2>
+<div class="card">
+<h3>MAU BUAT VIDEO ANIMASI KAYAK SAYA?</h3>
+<p>Mau membuat video animasi AI seperti ini? Silakan kunjungi website berikut.</p>
+<a class="btn" href="https://satsetmotion.id/" target="_blank">KUNJUNGI WEBSITE</a>
+<br>
+<button class="btn" onclick="chat('Halo Admin, saya mau membuat video animasi AI')">CHAT ADMIN</button>
+</div>
+
+<h2 class="title" id="produk">🛒 DAFTAR PRODUK</h2>
+
+<h2 class="title">📱 1. DAFTAR HARGA PULSA</h2>
+<input class="search" id="search" placeholder="🔍 Cari nominal pulsa..." oninput="renderPulsa()">
+<div id="prices"></div>
+
+<h2 class="title" id="data">📶 2. DAFTAR HARGA PAKET DATA</h2>
+<input class="search" id="cariData" placeholder="🔍 Cari provider atau paket..." oninput="renderData()">
+<div id="daftarData"></div>
+
+<div class="notice">
+⚠️ Harga paket data merupakan harga referensi. Harga dan ketersediaan dapat berubah sesuai nomor tujuan, wilayah, dan provider. Konfirmasi dahulu kepada admin.
+</div>
+
+<h2 class="title">☎️ 3. PAKET TELEPON</h2>
+
+<div class="grid">
+<div class="card">
+<h3>📞 TELKOMSEL</h3>
+<p>Paket telepon Telkomsel.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Halo Admin, saya mau tanya harga paket telepon Telkomsel')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>📞 INDOSAT</h3>
+<p>Paket telepon Indosat.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Halo Admin, saya mau tanya harga paket telepon Indosat')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>📞 XL / AXIS / TRI</h3>
+<p>Paket telepon berbagai provider.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Halo Admin, saya mau tanya harga paket telepon XL, AXIS atau TRI')">PESAN</button>
+</div>
+</div>
+
+<h2 class="title">🚀 4. SUNTIK SOSMED</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎵 TikTok</h3>
+<p>Jasa promosi dan pengembangan akun.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa TikTok')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>📸 Instagram</h3>
+<p>Jasa promosi Instagram.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa Instagram')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>▶️ YouTube</h3>
+<p>Jasa promosi channel YouTube.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa YouTube')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>📘 Facebook</h3>
+<p>Jasa promosi Facebook.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa Facebook')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>✈️ Telegram</h3>
+<p>Jasa promosi Telegram.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa Telegram')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>💬 WhatsApp</h3>
+<p>Konsultasi dan keamanan akun.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau konsultasi WhatsApp')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>🛒 Shopee</h3>
+<p>Jasa promosi toko.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa Shopee')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>🎧 Spotify</h3>
+<p>Layanan promosi.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa Spotify')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>𝕏 X / Twitter</h3>
+<p>Jasa promosi akun.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa X Twitter')">PESAN</button>
+</div>
+
+<div class="card">
+<h3>🛍️ Lazada</h3>
+<p>Jasa promosi toko.</p>
+<p>Harga: Tanya Admin</p>
+<button class="btn" onclick="chat('Saya mau tanya jasa Lazada')">PESAN</button>
+</div>
+
+</div>
+
+<div class="notice">
+List harga lengkap suntik sosmed silakan chat admin. Gunakan layanan promosi yang sesuai ketentuan platform.
+</div>
+
+<h2 class="title">💎 5. BUBBLE FREELANCE</h2>
+<div class="card">
+<h3>JOIN MEMBER BUBBLE FREELANCE</h3>
+<p>✨ Mulai Rp25.000</p>
+<p>🎉 Diskon Rp10.000</p>
+<button class="btn" onclick="chat('Halo Admin, saya mau join Bubble Freelance')">JOIN SEKARANG</button>
+</div>
+
+<h2 class="title">💰 6. SUNTIK ECERAN</h2>
+<div id="eceran"></div>
+
+<h2 class="title">🛡️ 7. KONSULTASI DIGITAL</h2>
+<div class="card">
+<h3>LAYANAN DIGITAL</h3>
+<p>Konsultasi layanan akun, keamanan WhatsApp dan informasi layanan digital.</p>
+<button class="btn" onclick="chat('Halo Admin, saya mau konsultasi layanan digital')">CHAT ADMIN</button>
+</div>
+
+<h2 class="title">📞 HUBUNGI ADMIN</h2>
+<div class="card" style="text-align:center">
+<h2 style="color:#00e676">RISS TOP UP 👑</h2>
+<p>Pesan produk atau tanyakan informasi kepada admin kami.</p>
+<h3 style="margin-top:10px;color:white">08211538620</h3>
+<button class="btn" onclick="chat('Halo Admin RISS TOP UP, saya mau pesan')">💬 CHAT WHATSAPP ADMIN</button>
+</div>
+
+</div>
+
+<footer>
+<h3 style="color:#00e676">👑 RISS TOP UP & JASA DIGITAL</h3>
+⚡ Cepat • Aman • Terpercaya<br>
+Terima kasih sudah berbelanja ❤️<br>
+© 2026 RISS TOP UP
+</footer>
+
+<a class="floating" onclick="chat('Halo Admin RISS TOP UP, saya mau bertanya')">💬 ADMIN</a>
+
+<script>
+
+const nomor="628211538620";
+
+function chat(pesan){
+window.open(
+"https://wa.me/"+nomor+"?text="+encodeURIComponent(pesan),
+"_blank"
+);
+}
+
+function rupiah(n){
+return "Rp "+Number(n).toLocaleString("id-ID");
+}
+
+/* DAFTAR PULSA */
+
+const pulsa=[
+["2.000","2.824"],
+["3.000","3.806"],
+["4.000","4.820"],
+["5.000","5.195"],
+["5.000 Promo","5.200"],
+["5.000 Flash Sale","5.200"],
+["10.000 Flash Sale","10.188"],
+["10.000","10.200"],
+["10.000 Promo","10.215"],
+["15.000","14.790"],
+["20.000 Promo","19.825"],
+["20.000","19.860"],
+["25.000 Promo","24.750"],
+["25.000","25.075"],
+["30.000","29.620"],
+["35.000","34.690"],
+["40.000","39.300"],
+["45.000 Special","44.500"],
+["45.000","44.575"],
+["50.000","49.580"],
+["55.000 Special","53.850"],
+["55.000","54.535"],
+["60.000 Special","59.400"],
+["60.000","59.510"],
+["65.000 Special","64.000"],
+["65.000","64.357"],
+["70.000 Special","69.000"],
+["70.000","69.283"],
+["75.000 Special","73.400"],
+["75.000","73.560"],
+["80.000 Special","79.105"],
+["80.000","79.233"],
+["85.000 Special","83.670"],
+["85.000","84.458"],
+["90.000 Special","89.235"],
+["90.000","89.370"],
+["95.000 Special","93.800"],
+["95.000","94.310"],
+["100.000","97.700"]
+];
+
+function renderPulsa(){
+let cari=document.getElementById("search").value.toLowerCase();
+
+let hasil=pulsa.filter(x=>
+x.join(" ").toLowerCase().includes(cari)
+);
+
+document.getElementById("prices").innerHTML=
+hasil.map(x=>`
+<div class="price">
+<span>Rp ${x[0]}</span>
+<strong>Rp ${x[1]}</strong>
+<button onclick="chat('Halo Admin, saya mau membeli pulsa Rp ${x[0]} harga Rp ${x[1]}')">BELI</button>
+</div>
+`).join("") ||
+"<p>Produk tidak ditemukan.</p>";
+}
+
+/* DAFTAR PAKET DATA */
+
+const paketData=[
+
+{provider:"TELKOMSEL",paket:"1 GB",masa:"30 Hari",harga:11650},
+{provider:"TELKOMSEL",paket:"7 GB",masa:"28 Hari",harga:41650},
+{provider:"TELKOMSEL",paket:"10 GB",masa:"30 Hari",harga:50500},
+
+{provider:"INDOSAT",paket:"6 GB",masa:"28 Hari",harga:32450},
+
+{provider:"XL",paket:"7 GB",masa:"28 Hari",harga:34390},
+{provider:"XL",paket:"10 GB",masa:"28 Hari",harga:41480},
+
+{provider:"AXIS",paket:"7 GB",masa:"28 Hari",harga:31146},
+{provider:"AXIS",paket:"10 GB",masa:"28 Hari",harga:35500},
+
+{provider:"TRI",paket:"7 GB",masa:"28 Hari",harga:30725},
+
+{provider:"SMARTFREN",paket:"7 GB",masa:"28 Hari",harga:34850},
+{provider:"SMARTFREN",paket:"10 GB",masa:"28 Hari",harga:39050}
+
+];
+
+function renderData(){
+
+let cari=document.getElementById("cariData").value.toLowerCase();
+
+let hasil=paketData.filter(x=>
+x.provider.toLowerCase().includes(cari) ||
+x.paket.toLowerCase().includes(cari)
+);
+
+let html="";
+let provider="";
+
+hasil.forEach(x=>{
+
+if(provider!==x.provider){
+
+if(provider!=="")html+="</div>";
+
+provider=x.provider;
+
+html+=`
+<div class="card provider">
+<h3>📶 ${provider}</h3>
+`;
+}
+
+html+=`
+<div class="price">
+<span>
+${x.paket}<br>
+<small>Masa aktif ${x.masa}</small>
+</span>
+
+<strong>${rupiah(x.harga)}</strong>
+
+<button onclick="chat('Halo Admin, saya mau membeli paket data ${x.provider} ${x.paket}, masa aktif ${x.masa}, harga ${rupiah(x.harga)}')">
+BELI
+</button>
+</div>
+`;
+
+});
+
+if(provider!=="")html+="</div>";
+
+document.getElementById("daftarData").innerHTML=
+html || "<p>Produk tidak ditemukan.</p>";
+
+}
+
+/* SUNTIK ECERAN */
+
+const eceran=[
+["1.000","10"],
+["2.000","20"],
+["3.000","30"],
+["4.000","40"],
+["5.000","50"]
+];
+
+document.getElementById("eceran").innerHTML=
+eceran.map(x=>`
+<div class="price">
+<span>Rp ${x[0]}</span>
+<strong>${x[1]} uncek</strong>
+<button onclick="chat('Halo Admin, saya mau pesan suntik eceran Rp ${x[0]} untuk ${x[1]} uncek')">
+PESAN
+</button>
+</div>
+`).join("");
+
+/* TAMPILKAN PRODUK */
+
+renderPulsa();
+renderData();
+
+</script>
+
+</body>
+</html>
